@@ -594,14 +594,37 @@ main {
   box-shadow: var(--shadow-1);
 }
 
+/* Responsive, centered avatar with smooth borders */
+/* Responsive, centered avatar with smooth borders */
+.avatar-box {
+  width: 80px; /* Same standard mobile size */
+  height: 80px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--bg-gradient-box, #1e1e1f);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0; /* Prevents mobile toggle squishing */
+}
+
 .avatar-box img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top; /* Focuses on your face */
   border-radius: inherit;
-  /* Smooth jagged edges/aliasing */
-  image-rendering: -webkit-optimize-contrast;
   backface-visibility: hidden;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* Larger size exclusively for desktop views */
+@media (min-width: 1250px) {
+  .avatar-box {
+    width: 150px; /* Increased size for desktop sidebar */
+    height: 150px;
+    border-radius: 30px; /* Slightly larger rounded corners for scale */
+  }
 }
 
 .testimonials-item-title { margin-bottom: 7px; }
