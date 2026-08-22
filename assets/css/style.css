@@ -798,12 +798,61 @@ main {
   #RESUME
 \*-----------------------------------*/
 
+
 .article-title { margin-bottom: 30px; }
 
 
 /**
  * education and experience 
  */
+
+ /* Resume Header Layout - Clears top navigation bar */
+.resume-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 25px;
+  padding-top: 50px; /* Pushes content down so navbar doesn't overlap */
+}
+
+.resume-header .article-title {
+  margin-bottom: 0;
+}
+
+/* Compact Download CV Button */
+.download-cv-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  padding: 8px 14px;
+  font-size: 13px;
+  border-radius: 10px;
+  width: auto;
+  margin-top: 0;
+}
+
+.download-cv-btn ion-icon {
+  font-size: 16px;
+}
+
+/* Mobile responsive tweak */
+@media (max-width: 580px) {
+  .resume-header {
+    padding-top: 20px; /* Reduces top clearance on mobile if navbar repositions */
+  }
+
+  .download-cv-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .download-cv-btn ion-icon {
+    font-size: 14px;
+  }
+}
 
 .timeline { margin-bottom: 30px; }
 
